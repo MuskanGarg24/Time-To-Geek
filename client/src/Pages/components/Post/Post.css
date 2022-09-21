@@ -1,0 +1,17 @@
+.cardBody {
+  width: 50%;
+  margin: 50px auto 30px auto;
+}
+
+.cardtitle {
+  font-size: 25px;
+}
+
+.cardcontent {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

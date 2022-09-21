@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.createPost {
+  /* border: 1px solid black; */
+  margin-top: 30px;
+  padding: 20px;
+}
+
+
+.writeTitle {
+  display: block;
+  margin: 20px auto 30px auto;
+  padding: 10px;
+  font-size: 30px;
+  border: none;
+  width: 50%;
+  border-top: none;
+  border-bottom: 1px solid #000;
+  border-right: none;
+  border-left: none;
+  outline: none;
+  font-family: 'Varela Round', sans-serif;
+  background-color: transparent;
+}
+
+.writeDesc {
+  display: block;
+  margin: 10px auto 30px auto;
+  padding: 10px;
+  font-size: 20px;
+  width: 50%;
+  line-height: 30px;
+  border: none;
+  font-family: 'Varela Round', sans-serif;
+  outline: none;
+  overflow: hidden;
+  resize: vertical;
+  background-color: transparent;
+}
+
+.button{
+    border: 1px solid #444;
+    display: block;
+    margin: auto;
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}

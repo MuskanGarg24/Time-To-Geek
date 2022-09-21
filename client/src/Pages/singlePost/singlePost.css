@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+ 
+
+.singlePost{
+    border: 1px solid black;
+    width: 600px;
+    margin: 50px auto 10px auto;
+}
+
+.postDetails{
+    /* border: 1px solid black; */
+    margin-top: 10px;
+    text-align: center;
+} 
+
+.date{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.author{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+.username{
+    color: blue;
+    margin-left: 5px;
+}
+
+.postTitle{
+    /* border: 1px solid black; */
+    padding: 2px;
+    text-align: center;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.postContent{
+    /* border: 1px solid black; */
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.content{
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif;
+}
+
+.buttons{
+    /* border: 1px solid black; */
+    margin: 40px auto 40px auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.controlButton{
+    padding: 5px;
+    width: 80px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.edit{
+    background-color: blue;
+}
+
+.delete{
+    background-color: red;
+}
+
+.update{
+    background-color: seagreen;
+}
+
+.titleInput{
+    width: 550px;
+    padding: 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.storyInput{
+    width: 550px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    overflow-y: hidden;
+}
+
+
+@media (max-width: 500px){
+    .singlePost{
+        width: 100%;
+        height: auto;
+        margin: 10px;
+    }
+}

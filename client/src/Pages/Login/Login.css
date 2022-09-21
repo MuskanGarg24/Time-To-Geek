@@ -1,0 +1,11 @@
+.registerLink{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.register{
+  font-weight: bold;
+  color: black;
+  margin-left: 5px;
+  cursor: pointer;
+}
