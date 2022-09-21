@@ -35,7 +35,30 @@ Start the server
 
 ## Screenshots
 
-Home
+HOME
 
-<img src="images/Screenshot%20(162).png" width="200px">
+<img src="images/Screenshot%20(162).png" width="800px">
 
+REGISTER
+
+<img src="images/Screenshot%20(160).png" width="800px">
+
+LOGIN
+
+<img src="images/Screenshot%20(161).png" width="800px">
+
+YOUR ACCOUNT
+
+<img src="images/Screenshot%20(163).png" width="800px">
+
+CREATE POST
+
+<img src="images/Screenshot%20(164).png" width="800px">
+
+READ FULL ARTICLE
+
+<img src="images/Screenshot%20(166).png" width="800px">
+
+MANAGE YOUR ACCOUNT
+
+<img src="images/Screenshot%20(165).png" width="800px">
