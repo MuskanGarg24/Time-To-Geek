@@ -71,7 +71,7 @@ function Login() {
 					</Col>
 				</Row>
 				<p className="text-success mt-2 p-1 text-center registerLink ">
-					Are You A Budding Author?{" "}
+					Not Registered?{" "}
 					<span className="register">
 						<Link to="/register" className="link">
 							Register Here!
