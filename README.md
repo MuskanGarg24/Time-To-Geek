@@ -35,18 +35,6 @@ Start the server
 
 ## Screenshots
 
-HOME
-
-<img src="images/Screenshot%20(162).png" width="800px">
-
-REGISTER
-
-<img src="images/Screenshot%20(160).png" width="800px">
-
-LOGIN
-
-<img src="images/Screenshot%20(167).png" width="800px">
-
 YOUR ACCOUNT
 
 <img src="images/Screenshot%20(163).png" width="800px">
