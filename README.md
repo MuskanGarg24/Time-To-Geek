@@ -45,7 +45,7 @@ REGISTER
 
 LOGIN
 
-<img src="images/Screenshot%20(161).png" width="800px">
+<img src="images/Screenshot%20(167).png" width="800px">
 
 YOUR ACCOUNT
 
