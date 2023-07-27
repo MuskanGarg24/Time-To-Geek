@@ -33,13 +33,13 @@ function SinglePost() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
+      window.location.replace("/");
       await axios.delete(
         `https://timetogeek.onrender.com/api/posts/${post._id}`,
         {
           data: { username: user.username },
         }
       );
-      window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
