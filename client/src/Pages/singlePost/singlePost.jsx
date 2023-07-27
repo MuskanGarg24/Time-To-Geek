@@ -1,7 +1,7 @@
 import "./singlePost.css";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import Footer from "../components/Footer/Footer";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState, useContext } from "react";
@@ -17,8 +17,6 @@ function SinglePost() {
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
   const [update, setUpdate] = useState(false);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,13 +34,13 @@ function SinglePost() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      navigate("/");
       await axios.delete(
         `https://timetogeek.onrender.com/api/posts/${post._id}`,
         {
           data: { username: user.username },
         }
       );
+      window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
@@ -63,12 +61,13 @@ function SinglePost() {
 
   const handleUpdate = async () => {
     try {
-      navigate("/");
       await axios.put(`https://timetogeek.onrender.com/api/posts/${post._id}`, {
         username: user.username,
         title: Title,
         content: Content,
       });
+      window.location.reload();
+      console.log("Post updated successfully");
     } catch (err) {
       console.log(err);
     }
