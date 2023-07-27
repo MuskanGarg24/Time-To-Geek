@@ -39,10 +39,10 @@ function SinglePost() {
           data: { username: user.username },
         }
       );
+      window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
-    window.location.replace("/");
   };
 
   const handleEdit = async (e) => {
