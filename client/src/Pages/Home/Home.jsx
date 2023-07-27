@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import Posts from "../components/Posts/Posts";
-import Footer from "../components/Footer/Footer";
 
 function Home() {
   const [posts, getPosts] = useState([]);
@@ -21,7 +20,6 @@ function Home() {
     <div>
       <BlogNavbar></BlogNavbar>
       <Posts posts={posts}></Posts>
-      <Footer></Footer>
     </div>
   );
 }

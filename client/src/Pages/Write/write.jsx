@@ -1,6 +1,5 @@
 import "./write.css";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
-import Footer from "../components/Footer/Footer";
 import { useContext, useState } from "react";
 import axios from "axios";
 import { Context } from "../../context/Context";
@@ -59,7 +58,6 @@ function Write() {
           </form>
         </div>
       </Container>
-      <Footer></Footer>
     </div>
   );
 }

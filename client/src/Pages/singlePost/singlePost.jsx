@@ -1,6 +1,5 @@
 import "./singlePost.css";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
-import Footer from "../components/Footer/Footer";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
@@ -40,9 +39,11 @@ function SinglePost() {
           data: { username: user.username },
         }
       );
-      window.location.replace("/");
     } catch (err) {
       console.log(err);
+    } finally {
+      console.log("block executed");
+      window.location.replace("/");
     }
   };
 
@@ -132,7 +133,6 @@ function SinglePost() {
           </div>
         </Card.Body>
       </Card>
-      <Footer></Footer>
     </div>
   );
 }

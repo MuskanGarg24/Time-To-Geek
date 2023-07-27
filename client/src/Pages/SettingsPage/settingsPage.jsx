@@ -1,5 +1,4 @@
 import BlogNavbar from "../components/Navbar/BlogNavbar";
-import Footer from "../components/Footer/Footer";
 import { useState, useContext } from "react";
 import { Context } from "../../context/Context";
 import "./settingsPage.css";
@@ -122,7 +121,6 @@ function Settings() {
           </Button>
         </div>
       </Container>
-      <Footer></Footer>
     </div>
   );
 }
