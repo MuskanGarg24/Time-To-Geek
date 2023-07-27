@@ -1,7 +1,7 @@
 import "./singlePost.css";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import Footer from "../components/Footer/Footer";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState, useContext } from "react";
@@ -17,6 +17,8 @@ function SinglePost() {
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
   const [update, setUpdate] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,13 +36,13 @@ function SinglePost() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      window.location.replace("/");
       await axios.delete(
         `https://timetogeek.onrender.com/api/posts/${post._id}`,
         {
           data: { username: user.username },
         }
       );
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
