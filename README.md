@@ -32,6 +32,11 @@ Start the server
   npm start
 ```
 
+## Deployment
+
+Netlify for frontend and Render for backend
+
+Deployed Link: https://timetogeek.netlify.app/
 
 ## Screenshots
 
