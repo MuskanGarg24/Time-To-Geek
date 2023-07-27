@@ -9,113 +9,116 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 
 function Settings() {
-	const { user, dispatch } = useContext(Context);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [update, setUpdate] = useState(false);
+  const { user, dispatch } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [update, setUpdate] = useState(false);
 
-	const handleLogout = () => {
-		dispatch({ type: "LOGOUT" });
-	};
+  // navigate
+  const navigate = useNavigate();
 
-	function replaceWindow(){
-		window.location.replace("/login");
-	}
+  // function to handle logout
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		setUpdate(false);
-		const updatedUser = {
-			email,
-			password,
-			userId: user._id,
-		};
-		try {
-			let id = user._id;
-			await axios.put("/user/" + id, updatedUser);
-			handleLogout();
-			setUpdate(true);
-		} catch (err) {
-			console.log(err);
-		}
-		replaceWindow();
-	};
+  // function to update account
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setUpdate(false);
+    const updatedUser = {
+      email,
+      password,
+      userId: user._id,
+    };
+    try {
+      let id = user._id;
+      handleLogout();
+      setUpdate(true);
+      navigate("/login");
+      await axios.put("/user/" + id, updatedUser);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-	const handleDelete = async(e)=>{
-		e.preventDefault();
-		try{
-			handleLogout();
-			await axios.delete(`/user/${user._id}`, {data:{userId: user._id}});
-		}catch(err){
-			console.log(err);
-		}
-		replaceWindow();
-	}
+  // funtion to delete the account
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    try {
+      handleLogout();
+      await axios.delete(`/user/${user._id}`, { data: { userId: user._id } });
+      navigate("/register");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-	const handleEmail = (e) => {
-		setEmail(e.target.value);
-	};
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
-	const handlePassword = (e) => {
-		setPassword(e.target.value);
-	};
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-	return (
-		<div>
-			<BlogNavbar></BlogNavbar>
-			<Container>
-				<h1 className="text-dark mt-3 p-3 text-center">My Account</h1>
-				<Row className="mt-3">
-					<Col
-						lg={5}
-						md={6}
-						sm={12}
-						className="p-5 m-auto shadow-sm rounded-lg"
-					>
-						<Form onSubmit={handleSubmit}>
-							<Form.Group className="mb-3" controlId="formBasicEmail">
-								<Form.Label>Update Email Address</Form.Label>
-								<Form.Control
-									type="text"
-									placeholder="Set New Email Address"
-									onChange={handleEmail}
-								/>
-							</Form.Group>
-							<Form.Group className="mb-3" controlId="formBasicPassword">
-								<Form.Label>Update Password</Form.Label>
-								<Form.Control
-									type="password"
-									placeholder="Set New Password"
-									onChange={handlePassword}
-								/>
-							</Form.Group>
-							<div className="d-grid">
-								<Button variant="primary" className="btn-btn" type="submit">
-									Update My Account
-								</Button>
-							</div>
-							<div className="alertMessage">
-								{update && <span>Updated Successfully!</span>}
-							</div>
-						</Form>
-					</Col>
-				</Row>
-				<div className="mt-2 mb-2 p-1 text-center">
-					<Button variant="danger" type="submit" onClick={handleLogout}>
-						LOGOUT
-					</Button>
-				</div>
-				<div className="mt-2 mb-2 p-1 text-center">
-					<Button variant="danger" type="submit" onClick={handleDelete}>
-						DELETE MY ACCOUNT
-					</Button>
-				</div>
-			</Container>
-			<Footer></Footer>
-		</div>
-	);
+  return (
+    <div>
+      <BlogNavbar></BlogNavbar>
+      <Container>
+        <h1 className="text-dark mt-3 p-3 text-center">My Account</h1>
+        <Row className="mt-3">
+          <Col
+            lg={5}
+            md={6}
+            sm={12}
+            className="p-5 m-auto shadow-sm rounded-lg"
+          >
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Update Email Address</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Set New Email Address"
+                  onChange={handleEmail}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Update Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Set New Password"
+                  onChange={handlePassword}
+                />
+              </Form.Group>
+              <div className="d-grid">
+                <Button variant="primary" className="btn-btn" type="submit">
+                  Update My Account
+                </Button>
+              </div>
+              <div className="alertMessage">
+                {update && <span>Updated Successfully!</span>}
+              </div>
+            </Form>
+          </Col>
+        </Row>
+        <div className="mt-2 mb-2 p-1 text-center">
+          <Button variant="danger" type="submit" onClick={handleLogout}>
+            LOGOUT
+          </Button>
+        </div>
+        <div className="mt-2 mb-2 p-1 text-center">
+          <Button variant="danger" type="submit" onClick={handleDelete}>
+            DELETE MY ACCOUNT
+          </Button>
+        </div>
+      </Container>
+      <Footer></Footer>
+    </div>
+  );
 }
 
 export default Settings;
