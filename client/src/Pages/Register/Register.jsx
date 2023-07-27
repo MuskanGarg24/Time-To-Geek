@@ -48,7 +48,10 @@ function Register() {
       return;
     }
     try {
-      const response = await axios.post("/auth/register", res);
+      const response = await axios.post(
+        "https://timetogeek.onrender.com/api/auth/register",
+        res
+      );
       const userId = response.data.data.userId;
       replaceWindow(userId);
     } catch (err) {

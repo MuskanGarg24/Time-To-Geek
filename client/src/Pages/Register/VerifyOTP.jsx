@@ -13,7 +13,10 @@ const VerifyOTP = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/auth/verifyOTP", { userId, otp });
+      const response = await axios.post(
+        "https://timetogeek.onrender.com/api/auth/verifyOTP",
+        { userId, otp }
+      );
       const verified = response.data.status;
 
       if (verified === "VERIFIED") {

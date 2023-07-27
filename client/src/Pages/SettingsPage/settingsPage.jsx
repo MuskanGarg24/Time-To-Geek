@@ -39,7 +39,10 @@ function Settings() {
       handleLogout();
       setUpdate(true);
       navigate("/login");
-      await axios.put("/user/" + id, updatedUser);
+      await axios.put(
+        "https://timetogeek.onrender.com/api/user/" + id,
+        updatedUser
+      );
     } catch (err) {
       console.log(err);
     }
@@ -50,7 +53,10 @@ function Settings() {
     e.preventDefault();
     try {
       handleLogout();
-      await axios.delete(`/user/${user._id}`, { data: { userId: user._id } });
+      await axios.delete(
+        `https://timetogeek.onrender.com/api/user/${user._id}`,
+        { data: { userId: user._id } }
+      );
       navigate("/register");
     } catch (err) {
       console.log(err);

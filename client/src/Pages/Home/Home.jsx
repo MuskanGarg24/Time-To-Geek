@@ -1,21 +1,21 @@
-import './Home.css'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import BlogNavbar from '../components/Navbar/BlogNavbar'
-import Posts from '../components/Posts/Posts'
-import Footer from '../components/Footer/Footer'
+import "./Home.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import BlogNavbar from "../components/Navbar/BlogNavbar";
+import Posts from "../components/Posts/Posts";
+import Footer from "../components/Footer/Footer";
 
-function Home () {
-  const [posts, getPosts] = useState([])
+function Home() {
+  const [posts, getPosts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('/posts')
-      const postData = res.data
-      getPosts(postData)
-    }
-    fetchData()
-  }, [])
+      const res = await axios.get("https://timetogeek.onrender.com/api/posts");
+      const postData = res.data;
+      getPosts(postData);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -23,7 +23,7 @@ function Home () {
       <Posts posts={posts}></Posts>
       <Footer></Footer>
     </div>
-  )
+  );
 }
 
 export default Home;
