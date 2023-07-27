@@ -1,0 +1,30 @@
+.otpHead {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.inputOTPdiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.otpInput {
+  width: 20vw;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.OTPButton {
+  width: 10vw;
+  margin-left: 10px;
+  padding: 5px 15px;
+  border: none;
+  background: #000;
+  color: white;
+  border-radius: 10px;
+}
+
+.OTPButton:hover{
+    opacity: 0.6;
+}
