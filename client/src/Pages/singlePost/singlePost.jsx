@@ -36,13 +36,13 @@ function SinglePost() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
+      navigate("/");
       await axios.delete(
         `https://timetogeek.onrender.com/api/posts/${post._id}`,
         {
           data: { username: user.username },
         }
       );
-      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -63,13 +63,12 @@ function SinglePost() {
 
   const handleUpdate = async () => {
     try {
+      navigate("/");
       await axios.put(`https://timetogeek.onrender.com/api/posts/${post._id}`, {
         username: user.username,
         title: Title,
         content: Content,
       });
-      window.location.reload();
-      console.log("Post updated successfully");
     } catch (err) {
       console.log(err);
     }
@@ -83,7 +82,7 @@ function SinglePost() {
           <div className="postDetails">
             <p className="date">{new Date(post.createdAt).toDateString()}</p>
             <p className="author">
-              Geek -
+              Author -
               <Link to={`/?user=${post.username}`} className="link">
                 <span className="username">{post.username}</span>
               </Link>
