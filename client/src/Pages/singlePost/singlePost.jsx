@@ -41,10 +41,8 @@ function SinglePost() {
       );
     } catch (err) {
       console.log(err);
-    } finally {
-      console.log("block executed");
-      window.location.replace("/");
     }
+    window.location.replace("/");
   };
 
   const handleEdit = async (e) => {
